@@ -20,20 +20,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       try {
         emit(HomeLoading());
         Position pos = await determinePosition();
-        print("pos");
-        print("pos");
-        print("pos");
-        print(pos.latitude);
-        print(pos);
-        print(pos.longitude);
         lat = pos.latitude;
         long = pos.longitude;
         if (isClosed) return;
         Response response =
             await repository.getHomeData(lat: lat!, long: long!);
-        print("response.data");
-        print(response.data);
-        print(response.data);
 
         if (response.statusCode == 200) {
           final weatherData = CurrentLocWheather.fromJson(response.data);

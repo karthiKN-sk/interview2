@@ -15,3 +15,12 @@ class HomeRepository {
     return response;
   }
 }
+// dynamic response;
+// if(response.data["Product"].isNotEmpty){
+
+// response= List<Name>.from(response.data["Product"].map(x)=>Name.fromJson(x));
+// }else{
+//   response=Name.fromJson(x);
+// }
+
+// return response;
